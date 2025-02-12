@@ -83,7 +83,7 @@ def mentions(count=8, page=0):
         print_status(i, status)
 
 
-def usertimeline(user_id, count=8, page=0):
+def usertimeline(user_id=None, count=8, page=0):
     api = get_api()
     global tldata
     data = api.statuses.GET_user_timeline(id=user_id, count=count, page=page, mode='lite')

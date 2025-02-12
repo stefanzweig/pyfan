@@ -45,6 +45,16 @@ def handle_timeline(commands, cmd, argv):
 
     pyfan.timeline(count, page)
 
+def handle_me(commands, cmd, argv):
+    arg_dict = _parse_argv(commands, cmd, argv)
+    if 'count' not in arg_dict:
+        arg_dict['count'] = 10
+    if 'page' not in arg_dict:
+        arg_dict['page'] = 0
+    count = int(arg_dict['count'])
+    page = int(arg_dict['page'])
+
+    pyfan.usertimeline(count=count, page=page)
 
 
 def handle_mention(commands, cmd, argv):

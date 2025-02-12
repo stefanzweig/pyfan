@@ -4,6 +4,11 @@ import os
 import myhandler
 
 COMMAND = {
+    'me':(u'显示我的消息。',
+           [('count', False, u'显示的条数。默认为8，如果此数大于60，则会强制指定为60'),
+            ('page', False, u'页号。默认为0')],
+           myhandler.handle_me),
+
     'timeline':(u'显示timeline的消息。', 
                 [('count', False, u'显示的条数。默认为10，如果此数大于60，则会强制指定为60'),
                  ('page', False, u'页号。默认为0')],
